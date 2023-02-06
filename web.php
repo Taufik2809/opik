@@ -13,44 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/home', function () {
-//     return ('Halaman Home');
-// });
-
-// Route::get('/about', function () {
-//     return ('Halaman About');
-// });
-
-// Route::get('/blog', function () {
-//     return ('Halaman Blog');
-// });
-
-// Route::get('/opik', function (){
-//     return ('mentang mentang dimaafin bukannya berubah malah lanjut part 2');
-// });
-
-route::get('/belajar', function (){
-    echo '<h1>Hello World</h1>';
-    echo '<p>Sedang belajar Laravel</p>';
+Route::get('/', function () {
+    return view('welcome');
 });
 
-// route::get('/siswa/smkbpi/rpl', function (){
-//     echo '<h2 style="text-align: center"><u>Welcome to 11 RPL</u></h2>';
-// });
-
-// route::get('/siswa/{taufik}', function ($taufik) {
-//     return "Tampilkan data siswa bernama $taufik";
-// });
-
-// route::get('/stok_barang/{hp}/{iphone}', function ($hp,$iphone) {
-//     return "Cek sisa stok untuk $hp $iphone";
-// });
-
-// route::get('/profile', function (){
-//     return view('profile');
-// });
-
-route::get('/profile', function (){
-    return view('profile');
+Route::get('/nilaisaya', function(){
+    $nama = "Taufik Hidayat";
+    $nilai = 40;
+    return view ('datanilai.nilaisiswa',compact('nama', 'nilai'));
 });
 
+Route::get('/nilaisiswa', function (){
+    $nama = 'Taufik Hidayat';
+    $nilai = [80,64,30,76,95];
+    return view('datanilai.nilaisaya',compact('nama','nilai'));
+});
