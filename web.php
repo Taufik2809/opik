@@ -13,18 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('siswa', function () {
+    $arrSiswa = ["Risa Lestari","Rudi Hermawan","Bambang Kusumo","lisa Permata"];
+    return view('siswa')->with('siswa',$arrSiswa);
 });
 
-Route::get('/nilaisaya', function(){
-    $nama = "Taufik Hidayat";
-    $nilai = 40;
-    return view ('datanilai.nilaisiswa',compact('nama', 'nilai'));
+Route::get('guru', function () {
+    $arrGuru = ["Maya Fitrianti, M.M.","Prof. Silvia Nst, M.Farm.","Dr. Umar Agustinus","Dr. Syahrial, M.Kom"];
+    return view('guru')->with('guru', $arrGuru);
 });
 
-Route::get('/nilaisiswa', function (){
-    $nama = 'Taufik Hidayat';
-    $nilai = [80,64,30,76,95];
-    return view('datanilai.nilaisaya',compact('nama','nilai'));
+Route::get('gallery', function () {
+    return view('gallery');
 });
